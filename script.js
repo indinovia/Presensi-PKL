@@ -50,4 +50,3 @@ document.getElementById('attendanceForm').addEventListener('submit', function(ev
     })
     .catch(error => console.error('Error sending message:', error));
 });
-
