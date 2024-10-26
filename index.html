@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sistem Presensi</h1>
-        <button id="attendanceButton">Presensi</button>
-        <p id="message"></p>
-    </div>
+    <h1>Presensi</h1>
+    <form id="attendanceForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+        <button type="submit">Presensi</button>
+    </form>
+    <p id="message"></p>
     <script src="script.js"></script>
 </body>
 </html>
