@@ -23,15 +23,17 @@ document.getElementById('attendanceForm').addEventListener('submit', function(ev
     event.preventDefault(); // Mencegah pengiriman formulir
 
     const name = document.getElementById('name').value; // Ambil nama dari dropdown
-    const timestamp = new Date().toLocaleString(); // Ambil tanggal dan waktu
+    const now = new Date(); // Waktu saat ini
+    const date = now.toLocaleDateString(); // Format tanggal
+    const time = now.toLocaleTimeString(); // Format waktu
 
-    // Menampilkan pesan berhasil di halaman
-    document.getElementById('message').innerText = 'Presensi berhasil!';
+    // Tampilkan pesan di halaman dengan format yang sesuai
+    document.getElementById('message').innerText = `Presensi berhasil!`;
 
-    // Mengirim data ke Telegram
+    // Kirim data ke Telegram
     const token = '7223485734:AAFkMYa7t8MjtncHCZGXQ69_e_ncJ90mKpU';
     const chatId = '1312023283';
-    const message = `${name} kehadiran pukul ${timestamp}`;
+    const message = `Presensi berhasil! Nama: ${name}, Kehadiran: ${date} pukul ${time}`;
 
     fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
